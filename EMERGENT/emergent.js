@@ -22,6 +22,8 @@ function distance(obj1, obj2) {
 /**
  * Represents an object in the simulation.
  *
+ * @/// <param name="game" type="GameEngine">Reference to the game engine.</param>
+ * @/// <param name="isFrisbee" type="boolean">Indicates Circle is a Frisbee if true.</param>
  * @author John Jackson
  * @author PROVIDED
  */
@@ -55,6 +57,10 @@ function Circle(game, isFrisbee) {
 /**
  * Update a bot's vitals.
  *
+ * @/// <param name="x" type="int">X Position</param>
+ * @/// <param name="y" type="int">Y Position</param>
+ * @/// <param name="hasFrisbee" type="boolean">True if bot is in possession of a frisbee</param>
+ * @/// <param name="velocity" type="Object{x, y}">Velocity of bot</param>
  * @author John Jackson
  */
 Circle.prototype.updateBot = function( x, y, hasFrisbee, velocity ) {
@@ -68,6 +74,9 @@ Circle.prototype.updateBot = function( x, y, hasFrisbee, velocity ) {
 /**
  * Update a frisbee's vitals.
  *
+ * @/// <param name="x" type="int">X position</param>
+ * @/// <param name="y" type="int">Y position</param>
+ * @/// <param name="isCaught" type="boolean">True if a bot is in possession of this.</param>
  * @author John Jackson
  */
 Circle.prototype.updateFrisbee = function (x, y, isCaught) {
@@ -111,6 +120,7 @@ Circle.prototype.setNotIt = function () {
 /**
  * Detect a collision with another circle.
  *
+ * @/// <param name="other" type="Circle">Circle this may have collided with.</param>
  * @return  *anonymous  <boolean>  True if there is a collision.
  * @author PROVIDED
  */
@@ -182,12 +192,18 @@ Circle.prototype.sync = function (bot) {
     }
 };
 
-
+/**
+ * Update the state of this.
+ *
+ * @author John Jackson
+ */
 Circle.prototype.update = function () {
     Entity.prototype.update.call(this);
 
+    //Check all other entities in game for collision
     for (var i = 0; i < this.game.entities.length; i++) {
         var ent = this.game.entities[i];
+        
         if (ent !== this && this.collide(ent)) {
             if (this.hasFrisbee && this.frisbee !== ent) {
                 //If contact is made with a second frisbee...
@@ -246,7 +262,6 @@ Circle.prototype.update = function () {
             this.y += this.velocity.y * this.game.clockTick;
         }
     }
-    
 };
 
 /**
@@ -261,5 +276,4 @@ Circle.prototype.draw = function (ctx) {
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     ctx.fill();
     ctx.closePath();
-
 };

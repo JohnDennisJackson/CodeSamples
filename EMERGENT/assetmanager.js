@@ -1,3 +1,8 @@
+/**
+ * Manages assets associate with game for upload prior to game state beginning.
+ *
+ * @author PROVIDED
+ */
 function AssetManager() {
     this.successCount = 0;
     this.errorCount = 0;
@@ -5,15 +10,30 @@ function AssetManager() {
     this.downloadQueue = [];
 }
 
+/**
+ * Adds assests to internal queue for download.
+ * 
+ * @/// <param name="path" type="String">Location of asset.</param>
+ */
 AssetManager.prototype.queueDownload = function (path) {
     console.log("Queueing " + path);
     this.downloadQueue.push(path);
 }
 
+/**
+ * Returns state of asset download.
+ * 
+ * @return *anonymous   <boolean>   True if all assets have downloaded.
+ */
 AssetManager.prototype.isDone = function () {
     return this.downloadQueue.length === this.successCount + this.errorCount;
 }
 
+/**
+ * Loads all assets prior to engine instantiation.
+ *
+ * @/// <param name="callback" type="Function">Function to call.</param>
+ */
 AssetManager.prototype.downloadAll = function (callback) {
     for (var i = 0; i < this.downloadQueue.length; i++) {
         var img = new Image();
@@ -39,6 +59,12 @@ AssetManager.prototype.downloadAll = function (callback) {
     }
 }
 
+/**
+ * Returns the appropriate cached asset.
+ *
+ * @/// <param name="path" type="String">ID of asset</param>
+ * @return  *anonymous  <anonymous> Asset object.
+ */
 AssetManager.prototype.getAsset = function (path) {
     return this.cache[path];
 }
