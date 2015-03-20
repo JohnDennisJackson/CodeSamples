@@ -1,0 +1,167 @@
+Overview:
+	Our application will run given any username provided in original csv file using password "password".  The most significant users in each conference have been distilled at the bottom of this file for easy reference.  No special information or process should be needed to run JUnit tests or build the project from the provided file system (except that src.main.Main is the application's booting java file).
+	
+	For executable JAR, please enter "executable" folder and click "ConferenceApp" file.
+	For access to full file system, please import contents of "file system" folder or explore manually.
+	For list of group work distributions, please see the "listOfWork.pdf" file.
+	For a more thorough description of program rationale, please see the "designBrief.txt" file.
+
+	
+Emergency Contacts:
+	Jesse Bostic ---> (253) 227-1517 
+	James Nance  ---> (360) 271-5923
+
+	
+User Stories:
+	US01. As an Author, I want to submit a manuscript to a conference.
+		Yes
+	US02. As a Program Chair I want to designate a Subprogram Chair for a manuscript.
+		Yes
+	US03. As a Subprogram Chair, I want to assign a paper to reviewers.
+		Yes
+	US04. As a Reviewer, I want to view a list of manuscripts to which I have been assigned.
+		Yes
+	US05. As a Reviewer, I want to submit a review for a manuscript to which I have been assigned.
+		Yes
+	US06. As an Author I want to obtain the reviews for the manuscripts that I have submitted.
+		No
+	US07. As an Author, I want to make changes to my submission, including unsubmitting my manuscript.
+		Yes
+	US08. As a Subprogram Chair, I want to submit my recommendation for a paper.
+		Yes
+	US09. As a Program Chair, I want to view a list of all submitted manuscripts and the acceptance status (yes/no/undecided) for each.
+		Yes
+	US10. As a Program Chair, I want to make an acceptance decision (yes or no) on a submitted manuscript.
+		Yes
+	US11. As a Program Chair, I want to see which papers are assigned to which Subprogram chairs.
+		Yes
+	US12. As a user, I want to log in.
+		Yes
+
+
+
+Business Rules:
+	BR01. New registrations are only set up by head office staff.(User Stories: 12)
+		Yes
+	BR02. Only registered users can log in.(UserStories: 12, 1, others elaborate)
+		Yes
+	BR03. For each conference, only one user is designated the Program Chair.(User Stories:2, 9,others elaborate)
+		Yes
+	BR04. The designated Program Chair is assigned to a new conference when it is first set up.(User Stories:2,9,10,others elaborate)
+		Yes
+	BR05. User roles are designated for a specific conference - In other words having a particular role for conference X has no effect on the role or roles that this user has for conference Y. (User Stories: all)
+		Yes
+	BR06. A user can be designated as a Subprogram chair of a conference only if he or she is already a Reviewer for the conference. **(User Stories:2)
+		partial, when we designate SPC we follow this business rule, anyone who wasn't following this rule in the CSV has not been changed.
+	BR07. A particular user can carry out only those tasks for a conference related to the roles that he or she is assigned for that conference.(User Stories: all)
+		yes
+	BR08. A user becomes an Author only by submitting a manuscript.(User Stories:1, others elaborate)
+		Yes
+	BR09. A user can take on more than one role for a given conference.(User Stories: all)
+		Yes
+	BR10. An Author cannot review his or her own paper. A Reviewer cannot review a paper that he or she authored.(User Stories: 4, 5)
+		Yes
+	BR11. A Subprogram Chair cannot be designated for a paper that he or she authored.(User Stories: elaborate)
+		Yes
+	BR12. A Reviewer can only access those manuscripts assigned to him or her.(User Stories: elaborate)
+		Yes
+	BR13. A Reviewer can only access the reviews that he or she submits. (User Stories: elaborate)
+		Yes
+	BR14. An Author can only access his or her submitted manuscripts and reviews for these manuscripts.(User Stories: elaborate)
+		Yes
+	BR15. Only theProgram/Subprogram Chair submitting the recommendation can access thatSubprogram Chair’s recommendation.\(User Stories: elaborate)
+		Yes
+	BR16. An Author can submit a maximum of 4 papers to any conference.*(User Stories: elaborate)
+		Yes
+	BR17. A Reviewer can be assigned to review a maximum of 4 papers to review.*(User Stories: elaborate)
+		Yes
+	BR18. A Subprogram Chair can be designated no more than 4 papers.*(User Stories: elaborate)
+		Yes
+	BR19. Authors can only access reviews after the program chair has made a decision(User Stories: elaborate)
+		Yes
+	BR20. Only the Program Chair can see which Subprogram Chairs have been designated for which papers.(User Stories: elaborate)
+		Yes
+	BR21. Only the Program Chair and the Subprogram Chair designated for a particular paper can see which Reviewers have been assigned to review that paper (User Stories:elaborate)
+		Yes
+	BR22. All paper submissions must be made on or before the submission deadline.(User Stories:1, others elaborate)
+		No, our application does not handle dates.
+
+
+
+
+
+
+Important Users:  
+
+(Note, all passwords are "password", alternatively you may click forgot your password to auto fill password field.)
+
+Object-Oriented Programming, Systems, Languages & Applications
+
+	Program Chair
+		JamesMiller@symantec.com
+
+	Subprogram chairs
+		James.Sullivan@chevron.com
+		KennethVasquez@portlandgeneral.com
+
+	Reviewers
+		BrindleyT@xilinx.com
+		Emmett.Godyn@safeway.com
+		Linda.Holland@nikebiz.com
+		Ruth.Miles@delmonte.com
+	
+
+International Conference for Mechanical Engineering Education
+
+	Program Chair
+		TuM@sanmina-sci.com
+
+	Subprogram Chairs
+		RBobb@juniper.net
+		EdwardCoffey@micron.com
+		SHundley@juniper.net
+
+	Reviewers
+		BAronson@lithia.com
+		DowkerM@national.com
+		Mark_Larson@symantec.com
+		RyanStarcher@delmonte.com
+
+		
+Pacific Northwest Conference on Software Engineering
+
+	Program Chair
+		DDemetris@ebay.com
+
+	Subprogram Chairs
+		LutherG@spansion.com
+		CaroleRohrer@igt.com
+
+	Reviewers
+		Richard.Baker@mckesson.com
+		BBrown@pugetenergy.com
+		Palmer_Gally@cisco.com
+		RobertLewis@google.com
+		RyanStarcher@delmonte.com
+
+		
+Learning at Scale
+
+	Program Chair
+		DiazP@weyerhaeuser.com
+
+	Subrogram Chairs
+		Teresa_Cothern@delmonte.com
+		Roger.Harden@kla-tencor.com
+
+	Reviewers
+		Maria.Allen@yahoo.com
+		Steven_Ritter@microsoft.com
+		
+		
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+	Overview:
+	
+	The goal of the software contained herein is to provide the Multinational Society for Engineering Education(MSEE) with a computerized solution to managing their conference's peer review process.  As agreed upon, the system does allow for multi-user use by way of a unique login into the system, but the system is not networked.  Taking into great consideration the tasks and the rules that govern the execution of those tasks, 360 Solutions is proud to present what we believe to be a suitable, scalable model for managing the MSEE's needs of the present and the future.  
+	
+	Logging In:
+	
+	The user login allows for a user to login using the email address they provided upon registration for the conference and a password, which may be changed by way of the "My Account" link provided on the users main view.  Once their identity has been verified, the user is presented with two drop downs from which they will select a conference, and then a role to log into.  A user may not log into a role they are not privy in a conference.  The system will only populate the roles dropdown with those relative to that user in that conference.  After the selecting of conference and role, the user will be taken to their main view determined by their selections.  Since any member of MSEE may submit a paper, the default main view allows a user the ability to submit a paper.  They are granted permission as an author in the selected conference only after a paper has been successfully submitted to the conference.  There are no extraneous actions necessary for the user to view pertinent information once they have logged in.  The role they have chosen will dictate the view presented.  
+	
+	Author Role:
+	
+	When the Author role is selected, the user is presented with a table displaying the title and status of each paper they have submitted to this conference.  In the table, for each paper, the user is presented with buttons so they might exact certain actions on a submission.  Currently a user can engage in the editing of a submission, the deletion of a submission before a decision has been passed on the paper, or the viewing of a submission's reviews once an acceptance decision has been made.  The result of each action updates in real-time and is immediately viewable to the user.
+	
+	Reviewer Role:
+	
+	When the Reviewer role is selected, the title and current status of all papers they have been assigned to review are displayed in table format along with buttons representing the actions relative to the review process.  Specifically, the abilities to view a paper's submission entry, download the paper or to complete the review of a paper are provided.  A review may be resubmitted so long as the Subprogram Chair has not given their recommendation.
+	
+	Subprogram Chair Role:
+	
+	When granted access to the role of Subprogram Chair(SPC), the user is immediately aware of a paper's status via a table formatted display.  For each paper, a SPC is presented with the paper's title and current status.  Embedded in the table as well are buttons allowing the SPC to take action on a paper.  They are given four buttons titled with either a currently assigned Reviewer's name or a message indicating the option to assign is available.  When the button is clicked, a list of users given permission as a Reviewer in the conference is presented.  Also included are users holding the role of SPC and Program Chair per the information provided during our interviews.  And, of course, no user who is the Author of a given paper will be available for assignment as a Reviewer to a paper.  Also provided in the SPC's main view is the functionality to promote or demote a registered member of the MSEE to, or from the role of Reviewer.  Buttons giving the SPC the ability to view the reviews as they are completed and to complete their individual review are present as well.
+	
+	Program Chair Role:
+	
+	As a Program Chair a user can quickly discern the status of all papers in their conference on a single screen.  Their view is populated, in table format, with the title, current Subprogram Chair and status of a paper, and actions represented by clickable buttons for viewing a paper's submission, downloading a paper for review,  viewing a summary of the reviews committed for a paper and for executing a decision regarding a paper being presented at the conference.  The formatting of the review summary's display is modelled from the sketch provided during our initial interviews.  In a similar fashion to how SPC's main view handles the assignment of Reviewers, the Program Chair is also presented with a list of eligible users in the current conference when choosing to assign a Subprogram Chair to a paper.  Also, he is provided with the same ability to promote or demote a user meeting the criterion discussed in our interviews from the, or to the role of Subprogram Chair.
+	
+	Closing Summary:
+	
+	Taking into account how important the fluidity of completing tasks in an application can be, we have given a separate window stead in the user and system's focus whenever a form is being viewed or completed.  This not only insures that things stay tidy on the user's screen, but also requires that forms must be completed to be committed.  The latter eliminates any extraneous or incomplete data from fogging the system.  Since this is a local system, all data is stored locally using a SQLite database.  Though it's name may suggest otherwise, SQLite is a pliable and powerful model for our current data storage needs.  
+	All in all the look is clean and professional, the interface is intuitive and the data is accessible only to whom it is appropriate and when it is appropriate to be viewed.  Currently, the only functionality we wish we could demonstrate would be the implementation of date constraints on some of the actions as we had previously discussed.  This will certainly be implemented in the next iteration once all the necessary information regarding the specifics of the permissions relative to a date and/or any expectations of cataloguing conference data by date for future reference is collected.
+	
+	
