@@ -12,6 +12,8 @@ function AssetManager() {
 
 /**
  * Adds assests to internal queue for download.
+ * 
+ * @param   path    <String>    Location of asset.
  */
 AssetManager.prototype.queueDownload = function (path) {
     //console.log("Queueing " + path);
